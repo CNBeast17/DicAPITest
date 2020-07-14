@@ -48,9 +48,8 @@ public class MainActivity extends AppCompatActivity {
         final String language = "en-gb";
         String word = inputWord;
         final String fields = "definitions";
-        final String strictMatch = "true";
         final String word_id = word.toLowerCase();
-        return "https://od-api.oxforddictionaries.com:443/api/v2/entries/" + language + "/" + word_id + "?" + "fields=" + fields + "&strictMatch=" + strictMatch;
+        return "https://od-api.oxforddictionaries.com:443/api/v2/words/" + language + "?q=" + word_id;
     }
 
 
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
             //TODO: replace with your own app id and app key
             final String app_id = "c2e7b1fe";
-            final String app_key = "c36dcd311d964bfd7041f090522ec733";
+            final String app_key = "b41be5b3b08f91ebe3d849570f15c52a";
             try {
                 URL url = new URL(params[0]);
                 HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
